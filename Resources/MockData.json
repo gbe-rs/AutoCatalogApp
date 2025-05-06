@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "brand": "Toyota",
+        "model": "Corolla",
+        "year": 2022,
+        "price": 98000,
+        "imageURL": "https://link-da-imagem.com/corolla.jpg"
+    },
+    {
+        "id": 2,
+        "brand": "Honda",
+        "model": "Civic",
+        "year": 2021,
+        "price": 105000,
+        "imageURL": "https://link-da-imagem.com/civic.jpg"
+    }
+
+]
