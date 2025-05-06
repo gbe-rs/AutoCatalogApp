@@ -5,7 +5,7 @@ struct CarDetailView: View {
 
     var body: some View {
         ScrollView {
-            @EnvironmentObject private var favoritesVM = FavoritesViewModel()
+            @EnvironmentObject var favoritesVM: FavoritesViewModel
             VStack(alignment: .leading, spacing: 16) {
                 AsyncImage(url: URL(string: car.imageURL)) { image in
                     image

@@ -7,7 +7,7 @@ class CarListViewModel: ObservableObject {
     @Published var selectedBrand: String? = nil
 
     var brands: [String] {
-        let unique = Set(allCars.map { \.brand })
+        let unique = Set(allCars.map { $0.brand })
         return Array(unique).sorted()
     }
 

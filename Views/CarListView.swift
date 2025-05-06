@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CarListView: View {
     @StateObject private var viewModel = CarListViewModel()
-    @EnvironmentObject var favoritesViewModel = FavoritesViewModel
+    @EnvironmentObject var favoritesViewModel: FavoritesViewModel
     @State private var searchText = ""
     
     var body: some View {

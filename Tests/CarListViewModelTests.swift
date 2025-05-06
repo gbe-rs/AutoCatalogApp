@@ -10,12 +10,12 @@ final class CarListViewModelTests: XCTestCase {
 
         //Carros simulados para teste
         viewModel.allCars =  [
-            Car(id:1, brand:"Toyota", model: "Corolla"), 
-            Car(id:2, brand:"Honda", model: "Civic"), 
-            Car(id:3, brand:"Volkswagen", model: "Golf GTI"), 
-            Car(id:4, brand:"Chevrolet", model: "Cruze LTZ"), 
-            Car(id:5, brand:"Hiunday", model: "Sonata"),
-            Car(id:6, brand:"Audi", model: "A4"), 
+            Car(id:1, brand:"Toyota", model: "Corolla", year: 2022, price: 145000, imageURL: "https://di-enrollment-api.s3.amazonaws.com/toyota/models/2022/corolla/trims/SE+Nightshade+Edition.jpg"),
+            Car(id:2, brand:"Honda", model: "Civic", year: 2021, price: 112000, imageURL: "https://file.kelleybluebookimages.com/kbb/base/evox/CP/15455/2021-Honda-Civic-front_15455_032_2400x1800_BS.png?downsize=1000:*"),
+            Car(id:3, brand:"Volkswagen", model: "Golf GTI", year: 2020, price: 217000, imageURL: "https://s3.us-east-2.amazonaws.com/prod.mm.com/img/new-cars/Edit2-Edit.jpeg"),
+            Car(id:4, brand:"Chevrolet", model: "Cruze LTZ", year: 2019, price: 94000, imageURL: "https://www.autossegredos.com.br/wp-content/uploads/2018/10/cruze-2019.jpg"),
+            Car(id:5, brand:"Hiunday", model: "Sonata", year: 2018, price: 78000, imageURL: "https://media.ed.edmunds-media.com/hyundai/sonata/2018/oem/2018_hyundai_sonata_sedan_limited-20t_fq_oem_3_1280x855.jpg"),
+            Car(id:6, brand:"Audi", model: "A4", year: 2017, price: 111000, imageURL: "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/15q2/657945/2017-audi-a4-official-photos-and-info-news-car-and-driver-photo-659636-s-original.jpg?resize=1200:*"),
         ]
     }
 
