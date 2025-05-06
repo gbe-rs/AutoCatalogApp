@@ -1,16 +1,16 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @StateObject private var favoritesVM = FavoritesViewModel()
+    @EnvironmentObject var favoritesViewModel = FavoritesViewModel()
 
     var body: some View{
         NavigationView {
-            if favoritesVM.favorites.isEmpty {
+            if favoritesViewModel.favorites.isEmpty {
                 Text("Nenhum carro favoritado.")
                 .foregroundColor(.gray)
                 .italic()
             } else {
-                List(favoritesVM.favorites) { car in
+                List(favoritesViewModel.favorites) { car in
                     NavigationLink(destination: CarDetailView(car: car)) {
                         CarRowView(car: car)
                     }
