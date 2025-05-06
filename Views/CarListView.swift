@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CarListView: View {
     @StateObject private var viewModel = CarListViewModel()
-    @EnvironmentObject private var favoritesViewModel = FavoritesViewModel
+    @EnvironmentObject var favoritesViewModel = FavoritesViewModel
     @State private var searchText = ""
     
     var body: some View {
@@ -11,25 +11,28 @@ struct CarListView: View {
                 // Picker para selecionar marca (só aparece se houver dados)
                 if !viewModel.brands.isEmpty {
                     Picker("Marca", selection: $viewModel.selectedBrand) {
-                        Text("Todas").tag(String?.none)
-                        ForEach(viewmodel.brands, id: \(.self)) { brand in
-                            Text(brand).tag(String?.some(brand))
+                        Text("Todas").tag(nil as String?)
+                        ForEach(viewModel.brands, id: \.self) { brand in
+                            Text(brand).tag(brand as String?)
                         }
                     }
                     .pickerStyle(.segmented)
                     .padding()
                     .onChange(of: viewModel.selectedBrand) { _ in
-                        viewModel.applyFilter()
+                        viewModel.applyFilter(searchText: searchText)
                     }
                 }
 
                 // Campo de busca por texto
-                Textfield("Buscar por marca ou modelo", text: $searchText)
+                TextField("Buscar por marca ou modelo", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
+                    .onChange(of: searchText) { newValue in
+                        viewModel.applyFilter(searchText: newValue)
+                    }
 
                 // Lista de carros filtrada
-                List(filteredCars) { car in
+                List(viewModel.filteredCars) { car in
                     NavigationLink(destination: CarDetailView(car: car)) {
                         CarRowView(car: car)
                     }
@@ -37,15 +40,6 @@ struct CarListView: View {
                 .listStyle(PlainListStyle())
             }
             .navigationTitle("Catálogo de Carros")
-        }
-    }
-
-    //Combina filtro por marca + texto de busca
-    var filteredCars: [Car] {
-        viewModel.filteredCars.filter {
-            searchText.isEmpty ||
-            $0.brand.lowercased().contains(searchText.lowercased()) ||
-            $0.model.lowercased().contains(searchText.lowercased())
         }
     }
 }

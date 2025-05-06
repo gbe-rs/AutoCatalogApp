@@ -7,7 +7,7 @@ class CarListViewModel: ObservableObject {
     @Published var selectedBrand: String? = nil
 
     var brands: [String] {
-        let unique = Set(allCars.map { $0.brand })
+        let unique = Set(allCars.map { \.brand })
         return Array(unique).sorted()
     }
 
@@ -16,20 +16,31 @@ class CarListViewModel: ObservableObject {
     }
 
     private func loadCars() {
-        guard let url = Bundle.main.url(forResource: "MockData", withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let decoded = try? JSONDecoder().decode([Car].self, from: data) else {
-                return
-              }
-              self.allCars = decoded
-              applyFilter()
+        guard let url = Bundle.main.url(forResource: "MockData", withExtension: "json") else {
+            print("Erro: Arquivo MockData.json não encontrado.")
+            return
+        }
+
+        do {
+            let data = try Data(contentsOf: url)
+            let decoded = try JSONDecoder().decode([Car].self, from: data)
+            self.allCars = decoded
+            applyFilter()
+        } catch {
+            print("Erro ao carregar ou decodificar os dados: \(error)")
+        }
+        
+
     }
 
-    func applyFilter() {
-        if let brand = selectedBrand {
-            filteredCars = allCars.filter { $0.brand == brand }
-        } else {
-            filteredCars = allCars
+    // Aplica filtro por marca e texto de busca (opcional)
+    func applyFilter(searchText: String = "") {
+        filteredCars = allCars.lazy.filter { car in
+            let matchesBrand = selectedBrand == nil || car.brand == selectedBrand
+            let matchesSearch = searchText.isEmpty ||
+                car.brand.lowercased().contains(searchText.lowercased()) ||
+                car.model.lowercased().contains(searchText.lowercased()) 
+            return matchesBrand && matchesSearch
         }
     }
 
