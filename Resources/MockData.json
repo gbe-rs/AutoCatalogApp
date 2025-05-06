@@ -5,7 +5,7 @@
         "model": "Corolla",
         "year": 2022,
         "price": 145000,
-        "imageURL": "https://di-enrollment-api.s3.amazonaws.com/toyota/models/2022/corolla/trims/SE+Nightshade+Edition.jpg"
+        "imageURL": "https://revistacarro.com.br/wp-content/uploads/2019/12/Toyota-Corolla-XEi_4.jpg"
     },
     {
         "id": 2,
@@ -13,15 +13,15 @@
         "model": "Civic",
         "year": 2021,
         "price": 112000,
-        "imageURL": "https://file.kelleybluebookimages.com/kbb/base/evox/CP/15455/2021-Honda-Civic-front_15455_032_2400x1800_BS.png?downsize=1000:*"
+        "imageURL": "https://cdn.motor1.com/images/mgl/mBrOo/s1/honda-civic-exl-2020.webp"
     },
     {
         "id": 3,
         "brand": "Volkswagen",
         "model": "Golf GTI",
-        "year": 2020,
-        "price": 217000,
-        "imageURL": "https://s3.us-east-2.amazonaws.com/prod.mm.com/img/new-cars/Edit2-Edit.jpeg"
+        "year": 2025,
+        "price": 400000,
+        "imageURL": "https://miamiimports.com.br/wp-content/uploads/2024/05/VW-GOLF-GTI-2025-DIANTEIRA-ESQUERDA.png"
     },
     {
         "id": 4,

@@ -16,9 +16,9 @@ struct CarRowView: View {
             VStack(alignment: .leading) {
                 Text("\(car.brand) \(car.model)")
                 .font(.headline)
-                Text("Ano: \(car.year)")
+                Text("Ano: \(String(car.year))")
                 .font(.subheadline)
-                Text("R$ \(car.price, specifier: "%2f")")
+                Text("R$ \(car.price, specifier: "%.2f")")
                 .font(.subheadline)
                 .foregroundColor(.green)
             }

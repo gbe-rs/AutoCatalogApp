@@ -3,12 +3,13 @@ import SwiftUI
 struct CarDetailView: View {
     let car: Car
 
+    @EnvironmentObject var favoritesVM: FavoritesViewModel
+
+
     var body: some View {
         ScrollView {
-            @EnvironmentObject var favoritesVM: FavoritesViewModel
             VStack(alignment: .leading, spacing: 16) {
                 AsyncImage(url: URL(string: car.imageURL)) { image in
-                    image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 } placeholder: {
@@ -24,7 +25,6 @@ struct CarDetailView: View {
                     }) {
                         Image(systemName: favoritesVM.isFavorite(car) ? "heart.fill" : "heart")
                             .resizable()
-                            .frame(width: 24, height: 24)
                             .foregroundColor(.red)
                     }
                     .padding(.trailing)
@@ -35,7 +35,7 @@ struct CarDetailView: View {
                         .font(.title)
                         .bold()
 
-                    Text("Ano: \(car.year)")
+                    Text("Ano: \(String(car.year))")
                     .font(.headline)
 
                     Text("Preço: R$ \(car.price, specifier: "%.2f")")
@@ -47,7 +47,7 @@ struct CarDetailView: View {
                     Text("Descrição")
                         .font(.headline)
 
-                    Text("Carro Modelo \(car.model) da marca \(car.brand), fabricado em \(car.year). Ideal para quem busca desempenho, conforto e economia.")    
+                    Text("Carro Modelo \(car.model) da marca \(car.brand), fabricado em \(String(car.year)). Ideal para quem busca desempenho, conforto e economia.")    
                         .font(.body)
                 }
                 .padding(.horizontal)

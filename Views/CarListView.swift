@@ -33,9 +33,10 @@ struct CarListView: View {
 
                 // Lista de carros filtrada
                 List(viewModel.filteredCars) { car in
-                    NavigationLink(destination: CarDetailView(car: car)) {
-                        CarRowView(car: car)
-                    }
+                NavigationLink(destination: CarDetailView(car: car)
+                        .environmentObject(favoritesViewModel)) {
+                            CarRowView(car: car)
+                        }
                 }
                 .listStyle(PlainListStyle())
             }
