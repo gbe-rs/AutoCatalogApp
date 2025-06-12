@@ -1,6 +1,4 @@
-📱 AutoCatalogApp
-
-# AutoCatalogApp 🚗
+# 📱 AutoCatalogApp
 
 Aplicativo iOS desenvolvido com SwiftUI e arquitetura MVVM para exibição de um catálogo de veículos. Possui sistema de favoritos, busca por nome e filtro por marca.
 
@@ -49,6 +47,6 @@ git clone https://github.com/gbe-rs/AutoCatalogApp.git
 2.	Abra o arquivo .xcodeproj no Xcode
 3.	Compile e execute no simulador
 
-## 📌 Observações
+### 📌 Observações
 	•	Projeto desenvolvido para prática e demonstração de habilidades com SwiftUI moderno.
 	•	Código organizado e pronto para manutenção e evolução.
