@@ -1,18 +1,19 @@
-# AutoCatalogApp
+📱 AutoCatalogApp
 
-# AutoCatalog
+# AutoCatalogApp 🚗
 
-Aplicativo iOS desenvolvido com SwiftUI que exibe um catálogo de carros com detalhes, imagens, favoritos e filtro por marca. Ideal para mostrar domínio de Swift moderno, arquitetura MVVM, persistência com `UserDefaults` e UI declarativa.
+Aplicativo iOS desenvolvido com SwiftUI e arquitetura MVVM para exibição de um catálogo de veículos. Possui sistema de favoritos, busca por nome e filtro por marca.
 
-## Funcionalidades
+## ⚙️ Funcionalidades
 
-- Lista de carros com imagem, marca, modelo, ano e preço.
-- Detalhes de cada carro com imagem maior, descrição e botão de favorito.
-- Tela de **favoritos** com persistência local.
-- **Filtro por marca** com Picker dinâmico.
-- Design adaptável e responsivo com SwiftUI.
+- ✅ Listagem de veículos a partir de um JSON remoto.
+- 🚗 Detalhes de cada carro com imagem maior, descrição e botão de favorito.
+- ⭐ Tela de **favoritos** com persistência local (UserDefaults).
+- 🔍 **Filtro por nome do veículo e por marca** com Picker dinâmico.
+- 📱 Design adaptável e responsivo com SwiftUI.
+- 📐 Lógica de negócios separada por camadas (MVVM)
 
-## Tecnologias
+## 🔧 Tecnologias usadas
 
 - Swift 5
 - SwiftUI
@@ -21,6 +22,9 @@ Aplicativo iOS desenvolvido com SwiftUI que exibe um catálogo de carros com det
 - JSON local (mock)
 - AsyncImage
 - TabView
+- Combine
+-	URLSession
+- Git
 
 ## Estrutura
 
@@ -38,3 +42,13 @@ AutoCatalog/
 ├── Resources/
 │   └── MockData.json
 └── AutoCatalogApp.swift
+
+### ▶️ Como rodar o projeto
+1.	Clone o repositório:
+git clone https://github.com/gbe-rs/AutoCatalogApp.git
+2.	Abra o arquivo .xcodeproj no Xcode
+3.	Compile e execute no simulador
+
+## 📌 Observações
+	•	Projeto desenvolvido para prática e demonstração de habilidades com SwiftUI moderno.
+	•	Código organizado e pronto para manutenção e evolução.
